@@ -1,34 +1,39 @@
+<?php
+$page = 1;
+$int = rand(-20, 20);
+?>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Урок №6</title>
+    <title>Урок №7</title>
 </head>
 <body>
     <?php
-    $a = 4;
-    $b = 7;
-    $c = $a + $b;
-    ?>
-    <h1>Математические операции</h1>
-
-    <?php
-    echo "<p>a = {$a}, b = {$b}</p>";
-
-    echo 'Сложение: a + b = ' . $c . '<br/>';
-    $c = $a - $b;
-    echo 'Вычитание: a - b = ' . $c . '<br/>';
-    $c = $a * $b;
-    echo 'Умножение: a * b = ' . $c . '<br/>';
-    $c = $a / $b;
-    echo 'Деление: a / b = ' . $c . '<br/>';
-    echo 'Возведение в степень: a^b = ' . pow($a, $b) . '<br/>';
-
+    if ($int > -1) { echo 'Число (' . $int . ') положительное'; }
+    else { echo 'Число (' . $int . ') отрицательное'; }
     ?>
     <ul>
-        <li><a href="/index.php">Главное меню</a></li>
-        <li><a href="/1.php">1.php</a></li>
-        <li><a href="/2.php">2.php</a></li>
-        <li><a href="3.php">3.php</a></li>
+        <li>
+            <a href="/1.php">
+                <?php
+                if ($page == 1) echo '<strong>1.php</strong>';
+                else echo '1.php'; ?>
+            </a>
+        </li>
+        <li>
+            <a href="/2.php">
+                <?php
+                if ($page == 2) echo '<strong>2.php</strong>';
+                else echo '2.php'; ?>
+            </a>
+        </li>
+        <li>
+            <a href="/3.php">
+                <?php
+                if ($page == 3) echo '<strong>3.php</strong>';
+                else echo '3.php'; ?>
+            </a>
+        </li>
     </ul>
 </body>
 </html>
