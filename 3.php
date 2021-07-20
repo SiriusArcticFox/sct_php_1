@@ -3,6 +3,7 @@ $page = 3;
 $a = 417;
 $b = -741;
 ?>
+
 <html lang="ru">
 <head>
     <meta charset="utf-8">

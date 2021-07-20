@@ -4,6 +4,7 @@ $a = 4;
 $b = 7;
 $c = 1;
 ?>
+
 <html lang="ru">
 <head>
     <meta charset="utf-8">
