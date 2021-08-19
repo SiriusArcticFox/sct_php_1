@@ -1,110 +1,25 @@
+<?php
+$x1 = rand(-100, 100);
+$x2 = rand(-100, 100);
+?>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Урок №8</title>
+    <title>Урок №10 </title>
 </head>
 <body>
 <?php
-$x;
-$c = empty($x);
-var_dump($c); //bool(true)
+switch ($x1) {
+    case abs($x1) :
+        if ($x2 > -1) {
+            echo "$x1 и $x2 положительные";
+        } else echo "$x1 и $x2 имеют разные знаки";
+        break;
+    default :
+        if ($x2 > -1) {
+            echo "$x1 и $x2 имеют разные знаки";
+        } else echo "$x1 и $x2 отрицательные";
+}
 ?>
-<br />
-<?php
-$x = "";
-$c = empty($x);
-var_dump($c); //bool(true)
-?>
-<br />
-<?php
-$x = null;
-$c = empty($x);
-var_dump($c); //bool(true)
-?>
-<br />
-<?php
-$x = array();
-$c = empty($x);
-var_dump($c); //bool(true)
-?>
-<br />
-<?php
-$x = array('a', 'b');
-$c = empty($x);
-var_dump($c); //bool(false)
-?>
-<br />
-<?php
-$x = false;
-$c = empty($x);
-var_dump($c); //bool(true)
-?>
-<br />
-<?php
-$x = true;
-$c = empty($x);
-var_dump($c); //bool(false)
-?>
-<br />
-<?php
-$x = 1;
-$c = empty($x);
-var_dump($c); //bool(false)
-?>
-<br />
-<?php
-$x = 42;
-$c = empty($x);
-var_dump($c); //bool(false)
-?>
-<br />
-<?php
-$x = 0;
-$c = empty($x);
-var_dump($c); //bool(true)
-?>
-<br />
-<?php
-$x = -1;
-$c = empty($x);
-var_dump($c); //bool(false)
-?>
-<br />
-<?php
-$x ="1";
-$c = empty($x);
-var_dump($c); //bool(false)
-?>
-<br />
-<?php
-$x = "0";
-$c = empty($x);
-var_dump($c); //bool(true)
-?>
-<br />
-<?php
-$x = "-1";
-$c = empty($x);
-var_dump($c); //bool(false)
-?>
-<br />
-<?php
-$x = "php";
-$c = empty($x);
-var_dump($c); //bool(false)
-?>
-<br />
-<?php
-$x ="true";
-$c = empty($x);
-var_dump($c); //bool(false)
-?>
-<br />
-<?php
-$x = "false";
-$c = empty($x);
-var_dump($c); //bool(false)
-?>
-
 </body>
 </html>
