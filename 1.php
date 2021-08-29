@@ -10,64 +10,45 @@ $a = rand(1, 20);
 <?php
     switch ($a) {
         case 1 :
-            echo '$a = 1';
-            break;
+            echo '1 ';
         case 2 :
-            echo '$a = 2';
-            break;
+            echo '2 ';
         case 3 :
-            echo '$a = 3';
-            break;
+            echo '3 ';
         case 4 :
-            echo '$a = 4';
-            break;
+            echo '4 ';
         case 5 :
-            echo '$a = 5';
-            break;
+            echo '5 ';
         case 6 :
-            echo '$a = 6';
-            break;
+            echo '6 ';
         case 7 :
-            echo '$a = 7';
-            break;
+            echo '7 ';
         case 8 :
-            echo '$a = 8';
-            break;
+            echo '8 ';
         case 9 :
-            echo '$a = 9';
-            break;
+            echo '9 ';
         case 10 :
-            echo '$a = 10';
-            break;
+            echo '10 ';
         case 11 :
-            echo '$a = 11';
-            break;
+            echo '11 ';
         case 12 :
-            echo '$a = 12';
-            break;
+            echo '12 ';
         case 13 :
-            echo '$a = 13';
-            break;
+            echo '13 ';
         case 14 :
-            echo '$a = 14';
-            break;
+            echo '14 ';
         case 15 :
-            echo '$a = 15';
-            break;
+            echo '15 ';
         case 16 :
-            echo '$a = 16';
-            break;
+            echo '16 ';
         case 17 :
-            echo '$a = 17';
-            break;
+            echo '17 ';
         case 18 :
-            echo '$a = 18';
-            break;
+            echo '18 ';
         case 19 :
-            echo '$a = 19';
-            break;
+            echo '19 ';
         default :
-            echo '$a = 20';
+            echo '20 ';
     }
 ?>
 </body>
