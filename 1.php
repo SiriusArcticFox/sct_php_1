@@ -1,55 +1,26 @@
-<?php
-$a = rand(1, 20);
-?>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Урок №10</title>
+    <title>Урок №11</title>
 </head>
 <body>
 <?php
-    switch ($a) {
-        case 1 :
-            echo '1 ';
-        case 2 :
-            echo '2 ';
-        case 3 :
-            echo '3 ';
-        case 4 :
-            echo '4 ';
-        case 5 :
-            echo '5 ';
-        case 6 :
-            echo '6 ';
-        case 7 :
-            echo '7 ';
-        case 8 :
-            echo '8 ';
-        case 9 :
-            echo '9 ';
-        case 10 :
-            echo '10 ';
-        case 11 :
-            echo '11 ';
-        case 12 :
-            echo '12 ';
-        case 13 :
-            echo '13 ';
-        case 14 :
-            echo '14 ';
-        case 15 :
-            echo '15 ';
-        case 16 :
-            echo '16 ';
-        case 17 :
-            echo '17 ';
-        case 18 :
-            echo '18 ';
-        case 19 :
-            echo '19 ';
-        default :
-            echo '20 ';
-    }
+function manInfo ($name, $age, $adr) {
+    $age = abs($age);
+    $rest = 0;
+
+    if ($age > 100) $rest = $age % 100;
+    if ($age > 10) $rest = $age % 10;
+    if ($age > 0) $rest = $age;
+
+    echo "Имя: $name<br/>";
+    echo "Возраст: $age";
+    if ($rest == 1) echo ' год';
+    if ($rest > 1 and $rest < 5) echo ' года';
+    if ($rest > 4 or $rest == 0) echo ' лет';
+    echo "<br/>";
+    echo "Адрес: $adr<br/>";
+}
+manInfo(10,10, 'ул. Иванова, 20/2');
 ?>
 </body>
-</html>
