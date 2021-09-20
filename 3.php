@@ -1,45 +1,52 @@
 <?php
-    $basicTemperature = 0;
-?>
-<html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <title>Урок №13</title>
-</head>
-<body>
-<?php
-/**
- * Увеличение температуры
- * @param $before изначальная температура
- * @param $change значение, на которое изменяется $before
- */
-    function up(&$before, $change) {
-        echo "<tr><td>$before</td>";
-        $before += $change;
-        echo "<td>+$change</td><td>$before</td></tr>";
+    /**
+     * @return string возвращается html
+     */
+    function getContent() {
+        return "
+        <html>
+            <head>
+                <title>{{TITLE}}</title>
+            </head>
+            <body>
+                {{CONTENT}}
+            </body>
+        </html>
+        ";
     }
-    function down(&$before, $change) {
-        echo "<tr><td>$before</td>";
-        $before -= $change;
-        echo "<td>-$change</td><td>$before</td></tr>";
 
+    /**
+     * @param $content разметка (получается из getContent();
+     * @param $change то, на что нужно поменять {{TITLE}} или {{CONTENT}}
+     * @return array|string|string[]
+     */
+     function replaceTitle($content, $change) {
+        return str_replace("{{TITLE}}", $change, $content);
     }
+    function replaceContent($content, $change) {
+        return str_replace("{{CONTENT}}", $change, $content);
+    }
+
+    $content = getContent();
+
+    /**
+     * @param $changeType "title" или "content", иначе возвращается пустая строка
+     * @param $change то, на что нужно было изменит
+     * @return array|string|string[]
+     */
+    function getReplace($changeType, $change) {
+        global $content;
+        if ($changeType == "title") return replaceTitle($content, $change);
+        if ($changeType == "content") return replaceContent($content, $change);
+
+        return "";
+    }
+
+    $newContent = getReplace("title", "Hello there");
+    if ($newContent != "") $content = $newContent;
+    $newContent = getReplace("content", "Obi-Wan Kenobi");
+    if ($newContent != "") $content = $newContent;
+
+    echo $content;
+
 ?>
-    <table>
-        <thead>
-            <tr>
-                <th>До</th>
-                <th>Колебание</th>
-                <th>После</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php up($basicTemperature, 10); ?>
-            <?php up($basicTemperature, 5); ?>
-            <?php down($basicTemperature, 3); ?>
-            <?php down($basicTemperature, 7); ?>
-            <?php down($basicTemperature, 5); ?>
-        </tbody>
-    </table>
-</body>
-</html>

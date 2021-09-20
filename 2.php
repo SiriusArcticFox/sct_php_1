@@ -1,23 +1,27 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Урок №13</title>
+    <title>Урок №14</title>
 </head>
 <body>
 <?php
-/**
- * Функция выводит количество вызовов
- */
+    function changeString($beforeChanges) {
+        haveSymbol($beforeChanges);
 
-function numberOfCalls() {
-    static $count = 0;
-    $count += 1;
-    return "$count <br/>";
-}
+        $beforeChanges = str_replace(" ", "_", $beforeChanges);
+        $firstSymbol = mb_strtoupper(mb_substr($beforeChanges, 0, 1));
 
-echo numberOfCalls();
-echo numberOfCalls();
-echo numberOfCalls();
-echo numberOfCalls();
+        return  $firstSymbol . mb_strtolower(mb_substr($beforeChanges, 1));
+    }
+
+    function haveSymbol(&$str) {
+        $lastSymbol = mb_substr($str, -1);
+        if ( $lastSymbol != '!' && $lastSymbol != '.' && $lastSymbol != '?') {
+            $str = $str . '.';
+        }
+    }
+
+    echo changeString('aБВ abs3Er 54?') . "<br/>";
+    echo changeString('234 нетто.. ');
 ?>
 </body>

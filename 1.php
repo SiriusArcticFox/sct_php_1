@@ -1,26 +1,16 @@
-<?php
-$count = 0;
-?>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Урок №13</title>
+    <title>Урок №14</title>
 </head>
 <body>
 <?php
-    /**
-     * Функция выводит количество вызовов
-     */
 
-    function numberOfCalls() {
-        global $count;
-        $count += 1;
-        return "$count <br/>";
+    function getDate( $date ) {
+        return date('d.m.Y', strtotime($date));
     }
+    echo getDate('2020-01-28');
 
-    echo numberOfCalls();
-    echo numberOfCalls();
-    echo numberOfCalls();
-    echo numberOfCalls();
 ?>
 </body>
+</html>
