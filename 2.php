@@ -1,27 +1,24 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Урок №14</title>
+    <title>Урок №15</title>
 </head>
 <body>
 <?php
-    function changeString($beforeChanges) {
-        haveSymbol($beforeChanges);
-
-        $beforeChanges = str_replace(" ", "_", $beforeChanges);
-        $firstSymbol = mb_strtoupper(mb_substr($beforeChanges, 0, 1));
-
-        return  $firstSymbol . mb_strtolower(mb_substr($beforeChanges, 1));
-    }
-
-    function haveSymbol(&$str) {
-        $lastSymbol = mb_substr($str, -1);
-        if ( $lastSymbol != '!' && $lastSymbol != '.' && $lastSymbol != '?') {
-            $str = $str . '.';
+    function fromOneToTen() {
+        for ($i = 0; $i < 11; $i++) {
+            if ($i == 0) {
+                echo "$i - тоже чётное<br/>";
+            } else {
+                if (($i % 2) == 0) {
+                    echo "$i - чётное<br/>";
+                } else {
+                    echo "$i - нечётное<br/>";
+                }
+            }
         }
     }
-
-    echo changeString('aБВ abs3Er 54?') . "<br/>";
-    echo changeString('234 нетто.. ');
+    fromOneToTen();
 ?>
 </body>
+</html>
