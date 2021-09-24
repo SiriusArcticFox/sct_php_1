@@ -1,7 +1,7 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Урок №15</title>
+    <title>Урок №16</title>
     <style>
         table { border-collapse: collapse; }
             th { text-align: center }
@@ -16,26 +16,34 @@
 </head>
 <body>
 <?php
-    function createTable(){
-      echo "<table><thead><tr><th>№ п/п</th><th>Наименование</th><th>Цена, руб</th></tr></thead><tbody>";
-      for ($i = 0; $i < 3; $i++){
-          echo "<tr><td>$i</td><td>";
-          switch ($i) {
-              case 0:
-                  echo "Карандаш цветной</td><td>20,00";
-                  break;
-              case 1:
-                  echo "Линейка 20см</td><td>30,00";
-                  break;
-              default:
-                  echo "Акварель</td><td>350,00";
-          }
-          echo "</td></tr>";
-      }
-      echo "</tbody></table>";
-    }
+    $products = [
+        'мобильный телефон' => [
+            'Xiaomi Redmi Note 9 Pro',
+            'Samsung Galaxy A32',
+            'Huawei P40 lite',
+        ],
+        'мебель' => [
+            '3-местный диван LIDHULT',
+            'Шкаф книжный со стеклянными дверьми',
+        ],
+        'канцелярия' => [
+            'Краски акварельные "Белые ночи"',
+            'Клей-карандаш Brauberg',
+        ],
+        'видеокарта' => [ 'PALIT NVIDIA GeForce RTX 3060' ],
+        'игровая консоль' => [
+            'Nintendo Switch',
+            'Xbox Series X'
+        ],
+    ];
 
-    createTable();
+    foreach ($products as $i => $value) {
+        echo "$i: ";
+        foreach ($value as $j) {
+            echo " $j;";
+        }
+        echo '<br/>';
+    }
 ?>
 </body>
 </html>
