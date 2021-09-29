@@ -11,8 +11,8 @@ $newsLinks = [
     'punkt-a.info' => 'https://punkt-a.info/news/novosti-kratko/v-astrakhani-snesli-avariynyy--dom',
     'astrakhan.su' => 'https://astrakhan.su/news/accidents/policija-snjala-s-linii-marshrutku-178-astrahan-birjukovka-iz-za-sostojanija-voditelja/',
 ];
-foreach ($newsLinks as $href) {
-    echo $href . ' ' . $newsLinks[$href] . '<br/>';
+foreach ($newsLinks as $title => $link) {
+    echo "<a href='$link'>$title</a><br/>";
 }
 ?>
 </body>
