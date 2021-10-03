@@ -1,17 +1,32 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Урок №16</title>
+    <title>Урок №17</title>
 </head>
 <body>
 <?php
-    $newsLinks = [
-            'https://astrakhan-24.ru/news/misc/astrakhancev_zhdjot_uluchshenie_pogody_i_novyj_kholodnyj_front_79577',
-            'https://astrakhan.aif.ru/society/registrirovat_smert_v_astrahani_budut_po_novomu_adresu',
-            'https://punkt-a.info/news/novosti-kratko/v-astrakhani-snesli-avariynyy--dom',
-            'https://astrakhan.su/news/accidents/policija-snjala-s-linii-marshrutku-178-astrahan-birjukovka-iz-za-sostojanija-voditelja/',
-    ];
-    print_r($newsLinks);
+
+function isNotInArray ($firstList, $secondList) {
+    for ( $i = 0; $i < count($firstList); $i++ ) {
+        if ( !in_array($firstList[$i], $secondList) ) {
+            echo $firstList[$i] . '; ';
+        }
+    }
+}
+
+$oldRoles = [4,5,7,20,6,74];
+$newRoles = [3,20,5,1,9,34];
+
+echo "Новые роли: " . implode (',', $oldRoles) . "<br/>";
+echo "Роли, которые отсутствуют в БД :";
+isNotInArray($oldRoles,$newRoles);
+
+echo "<hr/>";
+
+echo "Старые роли: " . implode (',', $newRoles) . "<br/>";
+echo "Роли, которые будут удалены из БД: ";
+isNotInArray($newRoles,$oldRoles);
 ?>
+
 </body>
 </html>

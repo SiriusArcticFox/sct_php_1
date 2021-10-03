@@ -1,19 +1,37 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Урок №16</title>
+    <title>Урок №17</title>
 </head>
 <body>
 <?php
-$newsLinks = [
-    'astrakhan-24.ru' => 'https://astrakhan-24.ru/news/misc/astrakhancev_zhdjot_uluchshenie_pogody_i_novyj_kholodnyj_front_79577',
-    'astrakhan.aif.ru' => 'https://astrakhan.aif.ru/society/registrirovat_smert_v_astrahani_budut_po_novomu_adresu',
-    'punkt-a.info' => 'https://punkt-a.info/news/novosti-kratko/v-astrakhani-snesli-avariynyy--dom',
-    'astrakhan.su' => 'https://astrakhan.su/news/accidents/policija-snjala-s-linii-marshrutku-178-astrahan-birjukovka-iz-za-sostojanija-voditelja/',
+$a = [
+    [
+        'name' => 'Стул 1',
+        'price' => 20,
+        'category' => 1,
+    ],
+    [
+        'name' => 'Стул 2',
+        'price' => 210,
+        'category' => 2,
+    ],
+    [
+        'name' => 'Стул 3',
+        'price' => 15,
+        'category' => 2,
+    ],
+
 ];
-foreach ($newsLinks as $title => $link) {
-    echo "<a href='$link'>$title</a><br/>";
-}
+
+$sorting = function ($a, $b) {
+    if ($a['price'] == $b['price']) return 0;
+    if ($a['price'] < $b['price']) return -1;
+    return 1;
+};
+usort($a, $sorting );
+var_dump($a);
+
 ?>
 </body>
 </html>
