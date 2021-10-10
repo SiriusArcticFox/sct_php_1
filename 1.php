@@ -1,31 +1,29 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Урок №17</title>
+    <title>Урок №18</title>
 </head>
 <body>
+<a href="?login=friend">Логин</a>
+<a href="?password=mHg7dfg5">Пароль</a>
+<a href="?age=47">Возраст</a>
 <?php
-
-function isNotInArray ($firstList, $secondList) {
-    for ( $i = 0; $i < count($firstList); $i++ ) {
-        if ( !in_array($firstList[$i], $secondList) ) {
-            echo $firstList[$i] . '; ';
+function getUserData() {
+    if ($_GET){
+        if ($_GET['login']) {
+            echo "Логин пользователя:" . $_GET['login'];
         }
+        if ($_GET['password']) {
+            echo "Пароль пользователя:" . $_GET['password'];
+        }
+        if ($_GET['age']) {
+            echo "Возраст пользователя:" . $_GET['age'];
+        }
+    } else {
+        echo "Данных нет";
     }
 }
-
-$oldRoles = [4,5,7,20,6,74];
-$newRoles = [3,20,5,1,9,34];
-
-echo "Новые роли: " . implode (',', $oldRoles) . "<br/>";
-echo "Роли, которые отсутствуют в БД :";
-isNotInArray($oldRoles,$newRoles);
-
-echo "<hr/>";
-
-echo "Старые роли: " . implode (',', $newRoles) . "<br/>";
-echo "Роли, которые будут удалены из БД: ";
-isNotInArray($newRoles,$oldRoles);
+getUserData();
 ?>
 
 </body>
