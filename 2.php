@@ -22,14 +22,14 @@
     </form>
     <hr/>
     <?php
-    if (!empty($_POST)) {
-        getCalculations();
-    }
-    $_POST = null;
+    $firstValue = $_POST['firstValue'];
+    $secondValue = $_POST['secondValue'];
+    $operation = $_POST['operation'];
+    getCalculations($firstValue, $secondValue, $operation);
 
-    function getCalculations() {
-        $firstValue = $_POST['firstValue'];
-        $secondValue = $_POST['secondValue'];
+
+    function getCalculations($firstValue, $secondValue, $operation) {
+
 
         if (filter_var($firstValue, FILTER_VALIDATE_FLOAT ) == '') {
             echo 'Ошибка! Первое значение не является числом';
@@ -39,26 +39,26 @@
             echo 'Ошибка! Второе значение не является числом';
             return;
         }
-        if (!$_POST['operation']) {
+        if (!$operation) {
             echo 'Ошибка! Выберите параметр из списка';
             return;
         }
-        switch ($_POST['operation']) {
+        switch ($operation) {
             case 'Сложение' :
-                echo $_POST['firstValue'] . ' + ' . $_POST['secondValue'] . ' = ' . ($firstValue + $secondValue);
+                echo $firstValue . ' + ' . $secondValue . ' = ' . ($firstValue + $secondValue);
                 break;
             case 'Вычитание' :
-                echo $_POST['firstValue'] . ' - ' . $_POST['secondValue'] . ' = ' . ($firstValue - $secondValue);
+                echo $firstValue . ' - ' . $secondValue . ' = ' . ($firstValue - $secondValue);
                 break;
             case 'Деление' :
                 if ($secondValue != 0) {
-                    echo $_POST['firstValue'] . ' / ' . $_POST['secondValue'] . ' = ' . ($firstValue / $secondValue);
+                    echo $firstValue . ' / ' . $secondValue . ' = ' . ($firstValue / $secondValue);
                 } else {
                     echo 'Делить на 0 нельзя';
                 }
                 break;
             case 'Умножение' :
-                echo $_POST['firstValue'] . ' * ' . $_POST['secondValue'] . ' = ' . ($firstValue * $secondValue);
+                echo $firstValue . ' * ' . $secondValue . ' = ' . ($firstValue * $secondValue);
                 break;
         }
     }
