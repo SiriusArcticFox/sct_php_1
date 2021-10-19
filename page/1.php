@@ -1,10 +1,3 @@
-<html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <title>Урок №19</title>
-</head>
-<body>
-
 <form method="post">
     <input name="firstValue" placeholder="Первое значение" type="text">
     <input name="secondValue" placeholder="Второе значение" type="text">
@@ -59,5 +52,3 @@ function getCalculations($firstValue, $secondValue, $operation) {
     }
 }
 ?>
-</body>
-</html>

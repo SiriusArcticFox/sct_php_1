@@ -1,9 +1,3 @@
-<html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <title>Урок №19</title>
-</head>
-<body>
 Сегодня синели лужи<br/>
 И легкий шептал ветерок.<br/>
 Знай, никому не нужен<br/>
@@ -25,6 +19,3 @@
 Грязью покрытый погост.<br/>
 
 <img src="img/3.jpg" alt="">
-
-</body>
-</html>
