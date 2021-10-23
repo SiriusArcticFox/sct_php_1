@@ -47,7 +47,8 @@ function getCalculations($firstValue, $secondValue, $operation) {
 </form>
 <hr/>
 <?php
-if (isset($_POST)) {
+//!empty($_POST['firstValue'])
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     getCalculations($_POST['firstValue'], $_POST['secondValue'], $_POST['operation']);
 }
 ?>

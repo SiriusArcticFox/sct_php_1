@@ -23,8 +23,6 @@ function getPage($page)
 <a href="?page=2">2-ая страница</a><br/>
 <a href="?page=3">3-я страница</a><br/>
 <hr/>
-<?php
-    getPage($_GET['page']);
-?>
+<?php getPage($_GET['page']); ?>
 </body>
 </html>
