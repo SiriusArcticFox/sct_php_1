@@ -1,10 +1,11 @@
 <?php
-ob_start(); //буферизируем вывод
 include 'lib.php';
-$content = ob_get_clean(); //
-
+$content = getContent();
+if (empty($content)) {
+    return;
+}
 echo str_replace(
-    '{{CONTENT}}',
-    $content,
-    file_get_contents('html/main.html')
+    ['{{__MENU__}}', '{{__CONTENT__}}'],
+    [getMenu(), $content],
+    file_get_contents(__DIR__ . '/html/main.html')
 );

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 06 2021 г., 00:58
+-- Время создания: Дек 27 2021 г., 00:32
 -- Версия сервера: 10.3.22-MariaDB
 -- Версия PHP: 7.4.5
 
@@ -44,7 +44,7 @@ CREATE TABLE `order_product` (
   `product_id` int(11) NOT NULL,
   `count` int(11) NOT NULL,
   `price` int(11) NOT NULL COMMENT 'Цена товара (может в дальнейшем меняться, нунжо зафиксировать)',
-  `discount` int(100) DEFAULT NULL COMMENT 'Скидка'
+  `discount` int(100) DEFAULT NULL COMMENT 'скидка'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -60,6 +60,16 @@ CREATE TABLE `product` (
   `price` float NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `count`, `price`, `category_id`) VALUES
+(1, 'Калькулятор', 150, 100, 1),
+(2, 'Клавиатура', 34, 1999, 2),
+(3, 'Носки', 10, 123, 0),
+(5, 'Хлеб ржаной', 10, 33, 0);
 
 -- --------------------------------------------------------
 
@@ -91,6 +101,14 @@ CREATE TABLE `user` (
   `registration_time` datetime NOT NULL,
   `last_authorization` datetime NOT NULL COMMENT 'Время последней авторизации'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`id`, `login`, `first_name`, `second_name`, `phone`, `email`, `is_admin`, `registration_time`, `last_authorization`) VALUES
+(1, 'first_user', 'Иван', 'Иванов', '89998887766', 'test@mail.ru', 0, '2021-12-01 20:18:43', '2021-12-26 20:18:43'),
+(2, 'second_user', 'Пётр', 'Петров', '89877895544', 'test2@mail.ru', 0, '2021-12-26 20:18:43', '2021-12-25 20:18:43');
 
 --
 -- Индексы сохранённых таблиц
@@ -147,7 +165,7 @@ ALTER TABLE `order_product`
 -- AUTO_INCREMENT для таблицы `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT для таблицы `store_order`
@@ -159,7 +177,7 @@ ALTER TABLE `store_order`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
