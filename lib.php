@@ -49,3 +49,11 @@ function getMenu()
         </ul>
     ';
 }
+/**
+ * Для установки соединения с базой данных
+ *
+ * @return Object (или false)
+ */
+function getConnect() {
+    return mysqli_connect('127.0.0.1', 'root', 'root', 'sct');
+}

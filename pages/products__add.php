@@ -3,10 +3,9 @@ if (!empty($_POST['product__name'])) {
     if (empty($_POST['product__count'])) $_POST['product__count'] = 0;
     if (empty($_POST['product__price'])) $_POST['product__price'] = 0;
 
-    $link = mysqli_connect('127.0.0.1', 'root', 'root', 'sct');
     $sql = "INSERT INTO `product` (`name`, `count`, `price`, `category_id`) VALUES ('{$_POST['product__name']}','{$_POST['product__count']}','{$_POST['product__price']}',0)";
 
-    if (mysqli_query($link, $sql)) {
+    if (mysqli_query(getConnect(), $sql)) {
         echo 'Товар добавлен!<br/>';
     }
 } else {
