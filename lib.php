@@ -55,5 +55,8 @@ function getMenu()
  * @return Object (или false)
  */
 function getConnect() {
-    return mysqli_connect('127.0.0.1', 'root', 'root', 'sct');
+    static $connect;
+
+    if (empty($connect)) $connect = mysqli_connect('127.0.0.1', 'root', 'root', 'sct');
+    return $connect;
 }
